@@ -1,0 +1,47 @@
+so theres 2 ways
+
+All programs made before were single threaded (meaning they used one thread only -- often called the main thread)
+
+
+Server made by noob -- thisprogram only uses 1 thread called the main thread
+1) Recieves connection from client
+2) Interacts with client in whatever way the programmer desired
+3) Done
+4) Client gets cheeky, and tries to set up 2 clients both requesting and trying to interact with server at same time
+5) Server gets fked up and dnt work properly anymore
+
+
+
+Server made by pro -- handles multiple clients using multiple threads (i.e 5 clients means 5 threads used)
+1) Recieves connection from client
+2) Creates a thread to handle this client  ---Each thread is defined to run a particular program (Whatever program the programmer defines)
+3) This thread alone handles this client and once its done with client, it destroys itself -- or more correctly main thread destroys it(acc i dnt really know)
+4) Done
+5) If 2 clients decide to connect with the server now, the server creates 2 threads (giving us a total of 3 threads including the main thread)
+6) These 2 threads handle their own personal clients
+7) Once done, tada threads are destroyed
+
+
+And thats it, makes sense? yh
+
+so do u know how to code in it? no idea, okay ill try explaining it. i have some time b4 i start eating
+
+
+==========================================================================
+            //so a port is basically like a electrical socket, 
+            //so imagine a computer having loads of electrical sockets, except that you cant see them, makes sense? yes like a connection
+            //well yea, and every new client, needs a port to connect to. Soy these electrical sockets are our ports
+            //btw i said a port is like an electrical socket.
+            //i did not say a computer socket is like an electrical socket
+            //is that clear?, cos port != computer socket, yea? lool yh
+            //well a computer socket is basically ip address and socket joined together as a string
+            //so if ur ip address was 123.1.9.3 and port was 1234
+            //then ur socket address would be 123.1.9.3::1234   -- get it? yh
+            //so anyways, when a client makes a conneciton with a server, they need to connect to a port on the server, 
+            //clients are preconfigured with the port they need to connect on the computer
+
+            //and the server therefore needs to listen on that particular port(or electrical socket as we like to call them)
+            //and when the client sends a request for connection on that particular port, we have a connection
+            //and thats it, makes sense? yh
+============================================================================
+incase you need all that info, cos i could also send that to you, acc
