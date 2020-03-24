@@ -50,7 +50,8 @@ class Client {
             
             clientSocket = new Socket("localhost", 1234); //NOTE: 1234 is not the port our client is using, but the port 
             //we are going to connect to on the server(other computer we are communicating with) -- NOTE: The port we use(we as in the client) is random and is
-            //selected by the OS at runtime(when the program is ran, hence we as a client have no control over what port we use to communicate with the server)
+            //selected by the OS at runtime(when the program is ran), hence we as a client have no control over what port we use to communicate with the server,
+            //since its uniquely selected by the OS
 
             //Reason for using the try/catch statement, is because this connection may not be able to be made, since the IPaddress may not exist, or
             //the port number may not exist. NOTE:PORT numbers 0-1024 are reserved and should NOT be used. They are reserved for special applications
