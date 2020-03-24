@@ -98,8 +98,8 @@ class Client {
             String stringOutput = readFromOtherComputer.readUTF(); //reading in a string from the other computer
             Boolean booleanOutput = readFromOtherComputer.readBoolean(); //reading in a boolean from the other computer
 
-            System.out.println(stringOutput);
-            System.out.println(booleanOutput);
+            System.out.println("String output from other computer(server): " + stringOutput);
+            System.out.println("Boolean output from other computer(Server): " + booleanOutput);
         } catch (Exception e) {
             //TODO: handle exception
         }
@@ -108,6 +108,7 @@ class Client {
         try {
 
             Scanner in = new Scanner(System.in);
+            System.out.print("Send data to other computer(Server): ");
             String stringToSendToOtherComputer = in.nextLine();
 
             writetoOtherComputer.writeUTF(stringToSendToOtherComputer);
@@ -116,9 +117,9 @@ class Client {
 
             in.close(); //close method of taking input from console, since it will not be used again
 
-            //lets read data from client now
+            //lets read reply from othercomputer now
             String inputFromOtherComputer = readFromOtherComputer.readUTF();
-            System.out.println(inputFromOtherComputer);
+            System.out.println("Reply from other computer(Server): " + inputFromOtherComputer);
 
         } catch (Exception e) {
             //TODO: handle exception

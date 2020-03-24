@@ -49,15 +49,20 @@ class Server {
 
             //Lets print all these values out
 
-            System.out.println(helloOutputFromClient);
-            System.out.println(integerOutputFromCLient);
-            System.out.println(booleanOutputFromClient);
+            System.out.println("hello output from client: " + helloOutputFromClient);
+            System.out.println("Integer output from client: " + integerOutputFromCLient);
+            System.out.println("Boolean output from client: "+ booleanOutputFromClient);
+
+            //lets now send data to the client. We'll first send a string and then a boolean
+            writeToClient.writeUTF("this is from server");
+            writeToClient.flush();
+            writeToClient.writeBoolean(true);
+            writeToClient.flush();
 
             //Lets read the random input the client is now going to send us
-
             String userClientOutput = listenToClient.readUTF();
             //Now lets print it out
-            System.out.println(userClientOutput);
+            System.out.println("Text recieved from client :" + userClientOutput);
 
             //Now lets try sending data to this client
             if(userClientOutput.equals("hello")) {
